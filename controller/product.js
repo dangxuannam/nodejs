@@ -2,9 +2,9 @@
 //     {id: 1, name: "products A"},
 //     {id: 2, name: "products B"},
 // ];
-import mongoose from "mongoose";    
-const Product = mongoose.model('Product', { name:String });
-
+// import mongoose from "mongoose";    
+// const Product = mongoose.model('Product', { name:String });
+import Product from "../models/Product";
 export const list = async (req, res) => {
     try {
         const products = await Product.find()
