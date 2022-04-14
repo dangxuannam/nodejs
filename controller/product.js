@@ -50,7 +50,7 @@ export const remove = async (req, res) => {
    try{
        const product = await new Product(req.body).save()
        res.json(product)
-   }
+   }    
    catch (error) {
        res.status(400).json({
            message: "khong dc them san pham"

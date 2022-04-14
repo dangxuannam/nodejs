@@ -1,5 +1,6 @@
 import Category from "../models/category"
 import Product from "../models/Product";
+
 export const create = async (req, res) => {
     try {
         const category = await new Category(req.body).save()
@@ -27,5 +28,29 @@ export const list = async ( req, res) => {
         res.json(categories)
     } catch (error) {
         
+    }
+}
+export const remove = async (req, res) => {
+    const condition = {_id: req.params.id};
+    try{
+        const category = await Category.findOneAndRemove(condition).exec()
+        res.json(category)
+    }catch(error) {
+        res.status(400).json({
+            message: "k tim thay"
+        })
+    }
+}
+export const update = async (req, res) => {
+    const condition = {_id: req.params.id}
+    const doc = req.body
+    const option = {new:true}
+    try{
+        const category = await Category.findByIdAndUpdate(condition,doc,option).exec()
+        res.json(category)
+    }catch(error) {
+        res.status(400).json({
+            message: "k tim thay san pham"
+        })
     }
 }
