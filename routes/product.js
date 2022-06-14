@@ -11,7 +11,7 @@ router.get('/products/:id', checkAuth, read)
 
 router.delete('/products/:id', checkAuth, remove)
 
-router.post('/products/:userId', requireSignin, isAuth,isAdmin, create)
+router.post('/products',checkAuth, create)
 
 router.put('/products/:id', checkAuth, update )
 

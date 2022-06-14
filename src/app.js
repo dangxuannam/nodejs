@@ -9,7 +9,7 @@ import productRoute from '../routes/product'
 import mongoose from 'mongoose'
 
 import authRouter from '../routes/auth'
-
+import bookRouter from '../routes/book'
 
 const app = express()
 //middleware
@@ -18,9 +18,10 @@ app.use(morgan("tiny"))
 
 app.use(express.json()) 
 //router
-app.use("/api", productRoute)
-app.use("/api", categoryRouter)
-app.use("/api", authRouter )
+app.use(productRoute)
+app.use(categoryRouter)
+app.use(authRouter )
+app.use(bookRouter)
 //connect database
 mongoose.connect('mongodb://localhost:27017/web16309')
 .then(() => console.log('ket noi thanh cong'))

@@ -1,5 +1,6 @@
 import User from "../models/user";
 import jwt from "jsonwebtoken"
+import user from "../models/user";
 export const signup = async (req, res) => {
     const {email, name, password} = req.body
 
@@ -49,5 +50,15 @@ export const signin = async (req, res) => {
         })
     } catch (error) {
         
+    }
+}
+export const listuer = async (req, res) => {
+    try {
+        const user = await User.find()
+        res.json(user)
+    } catch (error) {
+        res.status(400).json({
+            message:"k tim thay"
+        })
     }
 }
