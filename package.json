@@ -17,9 +17,6 @@
     "url": "https://github.com/dangxuannam/nodejs/issues"
   },
   "homepage": "https://github.com/dangxuannam/nodejs#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -29,6 +26,7 @@
     "express-jwt": "^6.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.7",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16"
   }
 }

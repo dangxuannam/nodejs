@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/web16309')
 .then(() => console.log('ket noi thanh cong'))
 .catch((error) => console.log(error))
 //connection
-const PORT = 8000;
+const PORT =process.env.PORT|| 8000;
 app.listen(PORT, () => {
     console.log("da ket noi",PORT)
 })
