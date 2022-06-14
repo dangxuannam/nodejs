@@ -23,7 +23,7 @@ app.use(categoryRouter)
 app.use(authRouter )
 app.use(bookRouter)
 //connect database
-mongoose.connect('mongodb://0.0.0.0:27017/')
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI ||'mongodb://localhost:27017/web16309')
 .then(() => console.log('ket noi thanh cong'))
 .catch((error) => console.log(error))
 //connection
